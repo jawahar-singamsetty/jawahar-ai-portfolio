@@ -14,40 +14,45 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yuvraj Singh Portfolio",
+  title: "Jawahar S R Portfolio",
   description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
   keywords: [
-    "Yuvraj Singh", 
+    "Jawahar S R", 
     "Portfolio", 
     "Developer", 
     "AI", 
     "Interactive", 
     "Memoji", 
-    "Web Development",
-    "Full Stack",
+    "Data Science",
+    "AI Engineer",
+    "RAG",
+    "Agentic AI",
+    "Production-grade LLM",
+    "LangChain",
+    "LangGraph",
+    "LangSmith",
+    "RAGAS",
     "Next.js",
     "React"
   ],
   authors: [
     {
-      name: "Yuvraj Singh",
-      url: "https://yuvraj.bio",
+      name: "Jawahar S R",
     },
   ],
-  creator: "Yuvraj Singh",
+  creator: "Jawahar S R",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yuvraj.bio",
-    title: "Yuvraj Singh Portfolio",
+    title: "Jawahar S R Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Yuvraj Singh Portfolio",
+    siteName: "Jawahar S R Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yuvraj Singh Portfolio",
+    title: "Jawahar S R Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@yuvrajsingh",
+    creator: "@jawaharsr",
   },
   icons: {
     icon: [

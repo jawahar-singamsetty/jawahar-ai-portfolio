@@ -79,7 +79,7 @@ const Avatar = dynamic<AvatarProps>(
           className={`flex items-center justify-center transition-all duration-300 ${hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'}`}
         >
           <div
-            className="relative cursor-pointer overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-700"
+            className="relative cursor-pointer overflow-hidden rounded-full"
             onClick={() => (window.location.href = '/')}
           >
             <img
