@@ -15,7 +15,7 @@ export function Presentation() {
       "Hey 👋\nI'm Jawahar, an AI-focused Data Analyst and AI Engineer with 4 years of experience. I build Generative AI solutions — RAG pipelines, LLM fine-tuning, and data products that actually solve real problems. Currently building Retrivis.AI 🚀",
     src: '/profile-jaw.png',
     fallbackSrc:
-      'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
+      'https://ui-avatars.com/api/?name=Jawahar+SR&background=000000&color=fff&size=400',
   };
 
   // Animation variants for text elements

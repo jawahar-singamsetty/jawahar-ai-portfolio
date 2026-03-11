@@ -66,7 +66,7 @@ const InternshipCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Location</p>
             <p className="text-muted-foreground text-sm">
-              Bengaluru, India · Open to Remote
+              Bengaluru, India · Open to Remote & working worldwide
             </p>
           </div>
         </div>
