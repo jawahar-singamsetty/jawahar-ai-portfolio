@@ -276,7 +276,7 @@ const Chat = () => {
             animationDuration={1.5}
             label="Star"
             size={'sm'}
-            repoUrl="https://github.com/yuvraj0412s"
+            repoUrl="https://github.com/jawahar-singamsetty"
           />
         </div>
       </div>
