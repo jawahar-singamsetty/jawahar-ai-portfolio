@@ -10,6 +10,7 @@ import { getResume } from './tools/getResume';
 import { getSkills } from './tools/getSkills';
 import { getSports } from './tools/getSports';
 import { getWeather } from './tools/getWeather';
+import { getExperience } from './tools/getExperience';
 
 export const maxDuration = 30;
 
@@ -44,6 +45,7 @@ export async function POST(req: Request) {
       getCrazy,
       getInternship,
       getWeather,
+      getExperience,
     };
 
     const result = streamText({

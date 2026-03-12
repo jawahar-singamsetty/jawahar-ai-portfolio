@@ -25,7 +25,7 @@ import {
   UserRoundSearch,
   UserSearch,
 } from 'lucide-react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Drawer } from 'vaul';
 
 interface HelperBoostProps {
@@ -38,7 +38,7 @@ const questions = {
   Projects: 'Tell me about Retrivis.AI — what did you build and how does it work?',
   Skills: 'What are your skills? Give me a list of your technical and soft skills.',
   Fun: "What are your hobbies? And what's the craziest thing you've ever done?",
-  Contact:'How can I reach you? What kind of roles are you open to?',
+  Contact: 'How can I reach you? What kind of roles are you open to?',
 };
 
 const questionConfig = [
@@ -122,11 +122,11 @@ const questionsByCategory = [
 ];
 
 // Animated Chevron component
-const AnimatedChevron = () => {
+const AnimatedChevron = React.memo(() => {
   return (
     <motion.div
       animate={{
-        y: [0, -4, 0], // Subtle up and down motion
+        y: [0, -4, 0],
       }}
       transition={{
         duration: 1.5,
@@ -139,11 +139,11 @@ const AnimatedChevron = () => {
       <ChevronUp size={16} />
     </motion.div>
   );
-};
+});
+AnimatedChevron.displayName = 'AnimatedChevron';
 
-export default function HelperBoost({
+const HelperBoost = React.memo(function HelperBoost({
   submitQuery,
-  setInput,
 }: HelperBoostProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);
@@ -203,17 +203,17 @@ export default function HelperBoost({
                 style={{ justifyContent: 'safe center' }}
               >
                 {questionConfig.map(({ key, color, icon: Icon }) => (
-                <Button
-                  key={key}
-                  onClick={() => handleQuestionClick(key)}
-                  variant="outline"
-                  className="border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 h-auto min-w-[100px] flex-shrink-0 cursor-pointer rounded-xl bg-white/80 dark:bg-gray-800/80 px-4 py-3 shadow-none backdrop-blur-sm transition-none active:scale-95"
-                >
-                  <div className="flex items-center gap-3 text-gray-900 dark:text-gray-100">
-                    <Icon size={18} strokeWidth={2} color={color} />
-                    <span className="text-sm font-medium">{key}</span>
-                  </div>
-                </Button>
+                  <Button
+                    key={key}
+                    onClick={() => handleQuestionClick(key)}
+                    variant="outline"
+                    className="border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 h-auto min-w-[100px] flex-shrink-0 cursor-pointer rounded-xl bg-white/80 dark:bg-gray-800/80 px-4 py-3 shadow-none backdrop-blur-sm transition-none active:scale-95"
+                  >
+                    <div className="flex items-center gap-3 text-gray-900 dark:text-gray-100">
+                      <Icon size={18} strokeWidth={2} color={color} />
+                      <span className="text-sm font-medium">{key}</span>
+                    </div>
+                  </Button>
                 ))}
 
                 {/* Need Inspiration Button */}
@@ -221,19 +221,18 @@ export default function HelperBoost({
                   <Tooltip delayDuration={0}>
                     <TooltipTrigger asChild>
                       <Drawer.Trigger className="group relative flex flex-shrink-0 items-center justify-center">
-                      <motion.div
-                        className="hover:bg-gray-100 dark:hover:bg-gray-700 flex h-auto cursor-pointer items-center space-x-1 rounded-xl border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-3 text-sm backdrop-blur-sm transition-all duration-200"
-                        whileHover={{ scale: 1 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <div className="flex items-center gap-3 text-gray-900 dark:text-gray-100">
-                          <CircleEllipsis
-                            className="h-[20px] w-[18px] text-primary dark:text-primary-light" // or use suitable text colors here
-                            strokeWidth={2}
-                          />
-                          {/* <span className="text-sm font-medium">More</span> */}
-                        </div>
-                      </motion.div>
+                        <motion.div
+                          className="hover:bg-gray-100 dark:hover:bg-gray-700 flex h-auto cursor-pointer items-center space-x-1 rounded-xl border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-3 text-sm backdrop-blur-sm transition-all duration-200"
+                          whileHover={{ scale: 1 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <div className="flex items-center gap-3 text-gray-900 dark:text-gray-100">
+                            <CircleEllipsis
+                              className="h-[20px] w-[18px] text-primary dark:text-primary-light"
+                              strokeWidth={2}
+                            />
+                          </div>
+                        </motion.div>
                       </Drawer.Trigger>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -277,7 +276,9 @@ export default function HelperBoost({
       </Drawer.Root>
     </>
   );
-}
+});
+
+export default HelperBoost;
 
 // Component for each category section
 interface CategorySectionProps {
@@ -287,7 +288,7 @@ interface CategorySectionProps {
   onQuestionClick: (question: string) => void;
 }
 
-function CategorySection({
+const CategorySection = React.memo(function CategorySection({
   name,
   Icon,
   questions,
@@ -297,7 +298,6 @@ function CategorySection({
     <div className="space-y-3">
       <div className="flex items-center gap-2.5 px-1">
         <Icon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-        {/* <Drawer.Title className="text-[22px] font-medium text-gray-900"> */}
         <Drawer.Title className="text-[22px] font-medium text-gray-900 dark:text-gray-100">
           {name}
         </Drawer.Title>
@@ -317,7 +317,7 @@ function CategorySection({
       </div>
     </div>
   );
-}
+});
 
 // Component for each question item with animated chevron
 interface QuestionItemProps {
@@ -326,7 +326,11 @@ interface QuestionItemProps {
   isSpecial: boolean;
 }
 
-function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
+const QuestionItem = React.memo(function QuestionItem({
+  question,
+  onClick,
+  isSpecial,
+}: QuestionItemProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -337,7 +341,7 @@ function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
         'transition-colors duration-300',
         'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
         isSpecial
-          ? 'bg-black text-white hover:bg-gray-800 dark:hover:bg-gray-700' // lighter on hover for dark bg
+          ? 'bg-black text-white hover:bg-gray-800 dark:hover:bg-gray-700'
           : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 hover:bg-gray-200'
       )}
       onClick={onClick}
@@ -368,4 +372,4 @@ function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
       </motion.div>
     </motion.button>
   );
-}
+});

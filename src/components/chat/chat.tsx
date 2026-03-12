@@ -3,7 +3,7 @@ import { useChat } from '@ai-sdk/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { toast } from 'sonner';
 
 // Component imports
@@ -116,10 +116,8 @@ const Chat = () => {
     messages,
     input,
     handleInputChange,
-    handleSubmit,
-    isLoading,
+    status,
     stop,
-    setMessages,
     setInput,
     reload,
     addToolResult,
@@ -154,9 +152,10 @@ const Chat = () => {
     },
     onToolCall: (tool) => {
       const toolName = tool.toolCall.toolName;
-      console.log('Tool call:', toolName);
     },
   });
+
+  const isLoading = status === 'streaming' || status === 'submitted';
 
   const { currentAIMessage, latestUserMessage, hasActiveTool } = useMemo(() => {
     const latestAIMessageIndex = messages.findLastIndex(
@@ -190,7 +189,7 @@ const Chat = () => {
     return result;
   }, [messages]);
 
-  const isToolInProgress = messages.some(
+  const isToolInProgress = useMemo(() => messages.some(
     (m) =>
       m.role === 'assistant' &&
       m.parts?.some(
@@ -198,17 +197,17 @@ const Chat = () => {
           part.type === 'tool-invocation' &&
           part.toolInvocation?.state !== 'result'
       )
-  );
+  ), [messages]);
 
   //@ts-ignore
-  const submitQuery = (query) => {
+  const submitQuery = useCallback((query) => {
     if (!query.trim() || isToolInProgress) return;
     setLoadingSubmit(true);
     append({
       role: 'user',
       content: query,
     });
-  };
+  }, [append, isToolInProgress]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -238,28 +237,29 @@ const Chat = () => {
   }, [isTalking]);
 
   //@ts-ignore
-  const onSubmit = (e) => {
+  const onSubmit = useCallback((e) => {
     e.preventDefault();
     if (!input.trim() || isToolInProgress) return;
     submitQuery(input);
     setInput('');
-  };
+  }, [input, isToolInProgress, submitQuery]);
 
-  const handleStop = () => {
+  const handleStop = useCallback(() => {
     stop();
     setLoadingSubmit(false);
     setIsTalking(false);
     if (videoRef.current) {
       videoRef.current.pause();
     }
-  };
+  }, [stop]);
 
   // Check if this is the initial empty state (no messages)
   const isEmptyState =
     !currentAIMessage && !latestUserMessage && !loadingSubmit;
 
-  // Calculate header height based on hasActiveTool
-  const headerHeight = hasActiveTool ? 100 : 180;
+    const headerHeight = useMemo(() => 
+    hasActiveTool ? 100 : 180, 
+  [hasActiveTool]);
 
   return (
     <div className="relative h-screen overflow-hidden">
@@ -327,7 +327,7 @@ const Chat = () => {
           className="flex-1 overflow-y-auto px-2"
           style={{ paddingTop: `${headerHeight}px` }}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {isEmptyState ? (
               <motion.div
                 key="landing"
@@ -339,6 +339,7 @@ const Chat = () => {
             ) : currentAIMessage ? (
               <div className="pb-4">
                 <SimplifiedChatView
+                  key={currentAIMessage.id}
                   message={currentAIMessage}
                   isLoading={isLoading}
                   reload={reload}

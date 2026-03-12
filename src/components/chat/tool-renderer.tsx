@@ -86,6 +86,9 @@ export default function ToolRenderer({
               </div>
             );
 
+          case 'getExperience':
+            return null;
+
           // Default renderer for other tools
           default:
             return (
