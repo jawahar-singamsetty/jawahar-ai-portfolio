@@ -2,12 +2,12 @@
   <h1>AI Chatbot Portfolio 🤖✨</h1>
 </div>
 <p align="center">
-  <img src="https://img.shields.io/github/repo-size/jawahar-singamsetty/ai-portfolio?style=for-the-badge" alt="Repo Size">
-  <img src="https://img.shields.io/github/license/jawahar-singamsetty/ai-portfolio?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/repo-size/jawahar-singamsetty/jawahar-ai-portfolio?style=for-the-badge" alt="Repo Size">
+  <img src="https://img.shields.io/github/license/jawahar-singamsetty/jawahar-ai-portfolio?style=for-the-badge" alt="License">
   <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"></a>
   <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deployment"></a>
   <a href="https://mistral.ai/"><img src="https://img.shields.io/badge/Mistral-FF7E00?style=for-the-badge&logo=mistralai&logoColor=white" alt="Mistral API"></a>
-  <a href="https://github.com/jawahar-singamsetty/ai-portfolio/stargazers"><img src="https://img.shields.io/github/stars/jawahar-singamsetty/ai-portfolio?style=for-the-badge&color=ffd700" alt="Repo Stars"></a>
+  <a href="https://github.com/jawahar-singamsetty/jawahar-ai-portfolio/stargazers"><img src="https://img.shields.io/github/stars/jawahar-singamsetty/ai-portfolio?style=for-the-badge&color=ffd700" alt="Repo Stars"></a>
 </p>
 
 ---
@@ -58,8 +58,8 @@ Want to get this project running on your local machine? Follow these simple step
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/jawahar-singamsetty/ai-portfolio.git
-    cd ai-portfolio
+    git clone https://github.com/jawahar-singamsetty/jawahar-ai-portfolio.git
+    cd jawahar-ai-portfolio
     ```
 
 2. **Install dependencies:**
