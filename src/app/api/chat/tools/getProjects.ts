@@ -5,7 +5,7 @@ export const getProjects = tool({
   description:
     "This tool shows Jawahar's project — Retrivis.AI. Use this when the user asks about projects, Retrivis, RAG, architecture, retrieval, evaluation, tech stack, or what Jawahar has built.",
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 Here is my flagship project — Retrivis.AI! 🚀
 

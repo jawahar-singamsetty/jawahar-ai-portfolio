@@ -5,7 +5,7 @@ export const getExperience = tool({
   description:
     "Returns Jawahar's work history and career background. Use ONLY when user asks about work experience, previous jobs, career history, how he got started, or professional background. Do NOT use for hiring or job opportunity questions.",
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 **💼 Work Experience (Most Recent First)**
 

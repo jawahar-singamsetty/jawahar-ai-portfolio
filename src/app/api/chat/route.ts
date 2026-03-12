@@ -51,14 +51,10 @@ export async function POST(req: Request) {
     const result = streamText({
       model: mistral('mistral-large-latest'),
       messages,
-      toolCallStreaming: true,
       tools,
-      maxSteps: 2,
     });
 
-    return result.toDataStreamResponse({
-      getErrorMessage: errorHandler,
-    });
+    return result.toTextStreamResponse({});
   } catch (err) {
     console.error('Global error:', err);
     const errorMessage = errorHandler(err);

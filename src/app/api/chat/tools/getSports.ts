@@ -7,7 +7,7 @@ export const getSports = tool({
   description:
     "This tool shows Jawahar's hobbies and life outside of work. Use when the user asks about hobbies, interests, or what Jawahar does for fun.",
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 Here's what I get up to outside of work! 🎉
 

@@ -5,7 +5,7 @@ export const getSkills = tool({
   description:
     'This tool shows the skills and expertise of Jawahar S R. Use when the user asks about skills, tech stack, tools, or what technologies Jawahar knows.',
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 Here are my skills and expertise!
 

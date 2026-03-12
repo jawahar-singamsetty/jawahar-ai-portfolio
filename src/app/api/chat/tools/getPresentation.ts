@@ -5,7 +5,7 @@ export const getPresentation = tool({
   description:
     'This tool returns a concise personal introduction of Jawahar S R. It is used to answer the question "Who are you?" or "Tell me about yourself"',
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return {
       presentation: `
   Hey! I'm Jawahar S R 👋

@@ -7,7 +7,7 @@ export const getCrazy = tool({
   description:
     "This tool tells the craziest or funniest thing Jawahar has done. Use when the user asks about the craziest thing, a funny story, or something wild.",
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 The craziest thing I've done? Spent 20 hours straight debugging a LangGraph agent that kept routing EVERY query — PDFs, simple questions, even "hello" — straight to the web search tool. 😂
 

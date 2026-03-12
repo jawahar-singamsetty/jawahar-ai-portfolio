@@ -5,7 +5,7 @@ export const getInternship = tool({
   description:
     "Shows Jawahar's availability card for hiring. Use ONLY when user asks about hiring, job opportunities, or wants to reach out for work.",
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 **🎯 What I'm Open To**
 

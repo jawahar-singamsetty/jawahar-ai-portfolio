@@ -5,7 +5,7 @@ export const getContact = tool({
   description:
     'This tool shows the contact information of Jawahar S R. Use when the user asks how to contact, reach out, connect, or find Jawahar online.',
   parameters: z.object({}),
-  execute: async () => {
+  execute: async (_) => {
     return `
 Here's how to reach me! 📬
 
