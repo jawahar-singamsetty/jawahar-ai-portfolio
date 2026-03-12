@@ -117,12 +117,14 @@ const ChatMessageContent = React.memo(function ChatMessageContent({
       // While streaming — plain text only, no markdown parsing, no flicker
       if (isLoading) {
         return (
-          <p
+          <div
             key={partIndex}
-            className="break-words whitespace-pre-wrap leading-snug text-sm"
+            className="prose dark:prose-invert w-full max-w-none prose-p:my-0 prose-li:my-0 prose-ul:my-1 prose-ol:my-1 prose-headings:my-1"
           >
-            {part.text}
-          </p>
+            <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+              {part.text}
+            </Markdown>
+          </div>
         );
       }
 

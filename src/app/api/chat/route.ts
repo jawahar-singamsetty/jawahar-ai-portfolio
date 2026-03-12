@@ -52,9 +52,11 @@ export async function POST(req: Request) {
       model: mistral('mistral-large-latest'),
       messages,
       tools,
+      toolCallStreaming: true,
+      maxSteps: 5,
     });
 
-    return result.toTextStreamResponse({});
+    return result.toDataStreamResponse();
   } catch (err) {
     console.error('Global error:', err);
     const errorMessage = errorHandler(err);
