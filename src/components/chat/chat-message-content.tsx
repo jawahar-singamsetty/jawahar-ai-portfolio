@@ -83,7 +83,7 @@ const ChatMessageContent = React.memo(function ChatMessageContent({
         <div key={partIndex} className="w-full space-y-1">
           {contentParts.map((content, i) =>
             i % 2 === 0 ? (
-              <div key={`text-${i}`} className="prose dark:prose-invert w-full max-w-none">
+              <div key={`text-${i}`} className="prose dark:prose-invert w-full max-w-none prose-p:my-0 prose-li:my-0 prose-ul:my-1 prose-ol:my-1 prose-headings:my-1">
                 <Markdown
                   remarkPlugins={[remarkGfm]}
                   components={{
