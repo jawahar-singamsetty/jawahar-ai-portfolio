@@ -106,7 +106,7 @@ This project is open-sourced under the **MIT License**. See the [LICENSE](LICENS
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Live_Demo-jawahar.bio-2ea44f?style=for-the-badge&logo=vercel)](https://www.jawahar.dev/)
+[![Portfolio](https://img.shields.io/badge/AI_Portfolio-jawahar.dev-2ea44f?style=for-the-badge&logo=vercel)](https://www.jawahar.dev/)
 &nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jawaharsr)
 &nbsp;
@@ -118,4 +118,4 @@ This project is open-sourced under the **MIT License**. See the [LICENSE](LICENS
 
 ### **Tags**
 
-`#AIPortfolio` `#NextJS` `#React` `#RAGEngineer` `#LLMEngineer` `#MistralAI` `#LangChain` `#LangGraph` `#Vercel` `#OpenToWork`
+`#AIPortfolio` `#NextJS` `#React` `#InteractivePortfolio` `#AIAvatar` `#RAGEngineer` `#LLMEngineer` `#MistralAI` `#LangChain` `#LangGraph` `#Vercel` `#OpenToWork`
