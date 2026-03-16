@@ -9,7 +9,7 @@ export const getInternship = tool({
     return `
 **🎯 What I'm Open To**
 
-- 📅 **Availability:** Immediately available — March 2026
+- 📅 **Availability:** Immediately available — no notice period
 - 🌍 **Location:** Bengaluru, India · Open to Remote Worldwide
 - 🧑‍💻 **Target Roles:** AI Engineer, RAG Engineer, LLM Engineer, ML Engineer
 - 🛠️ **Core Stack:** Python, LangChain, LangGraph, FastAPI, Supabase, Redis, Celery, Docker, AWS

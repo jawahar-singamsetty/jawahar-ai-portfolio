@@ -11,7 +11,6 @@ export const getPresentation = tool({
   Hey! I'm Jawahar S R 👋
   
   ### About Me
-- 26 years old from Bengaluru, India
 - AI Engineer specialising in RAG systems, Agentic AI, and production-grade LLM architectures
 - MCA graduate in Data Science from Jain (Deemed to be University), Bengaluru
 - 4 years of professional experience spanning data analytics, distributed and monitoring systems

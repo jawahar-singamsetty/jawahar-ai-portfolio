@@ -18,6 +18,8 @@ Turned out one poorly worded line in my system prompt was confidently overriding
 Shipped it to production at 6AM, and stared at the ceiling for a while. 🤖🔥
 
 Worth it.
+
+I wrote about what I learned fixing RAG evaluation in production — you can read it on Medium: https://medium.com/@srjawahar1999
     `;
   },
 });
