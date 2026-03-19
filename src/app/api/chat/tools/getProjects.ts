@@ -20,6 +20,7 @@ A production-deployed multimodal RAG platform designed to extract insights from 
 - GitHub Backend: https://github.com/jawahar-singamsetty/retrivis.ai-server
 - GitHub Frontend: https://github.com/jawahar-singamsetty/retrivis.ai-client
 - Video Demo: https://www.loom.com/share/3317906ddbdb420783b6b9361b612d5a
+This video is a demo of the Retrivis.AI platform. It is 82 seconds long.
 - Built by: Jawahar S R (solo project)
 - Year: 2026
 - LLM used: GPT-4o (gpt-4o)

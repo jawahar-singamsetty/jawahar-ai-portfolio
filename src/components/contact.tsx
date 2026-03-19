@@ -40,14 +40,15 @@ export function Contact() {
       icon: <MapPin className="h-5 w-5" />,
       title: 'Location',
       value: 'Bengaluru, India',
-      href: '#',
-      color: 'text-purple-600'
+      href: 'https://www.google.com/maps/search/?api=1&query=Bengaluru,India',
+      color: 'text-purple-600',
+      external: true,
     },
     {
       icon: <LinkedinIcon className="h-5 w-5" />,
       title: 'LinkedIn',
       value: 'jawahar-singamsetty',
-      href: 'https://linkedin.com/in/jawahar-singamsetty',
+      href: 'https://www.linkedin.com/in/jawaharsr',
       color: 'text-blue-700'
     },
     {
